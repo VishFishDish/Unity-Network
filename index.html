@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Partners Information</title>
+</head>
+<body>
+    <header>
+        <h1>Unity Network</h1>
+            <!-- Creates the title for the website -->
+    </header>
+    <nav>
+        <select id="pageSelect">
+            <option value="add-partner">Add a New Partner</option>
+            <option value="search">Search/Filter</option>
+            <option value="qa">Q&A</option>
+        </select>
+    </nav>
+    <main>
+            <!-- Creates all the labels to be interacted with -->
+        <section id="add-partner" class="add-partner-section">
+            <h2>Add a New Partner</h2>
+            <form id="addPartnerForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+                <label for="type">Type:</label>
+                <input type="text" id="type" required>
+                <label for="resources">Resources:</label>
+                <textarea id="resources" rows="3"></textarea>
+                <label for="contactInfo">Email or Phone Number (XXXXXXXXXX):</label>
+                <input type="text" id="contactInfo" required>
+                <button type="submit">Add Partner</button>
+            </form>
+            <button id="manualBackupButton">Manual Backup</button>
+        </section>
+            <!-- Focuses on creating the buttons -->
+        <section id="search" class="search-section" style="display:none;">
+            <h2>Search or Filter Partners</h2>
+            <input type="text" id="searchInput" placeholder="Search by Name, Type, Resources, or Contact Info">
+            <button id="searchButton">Search</button>
+            <div id="searchResults"></div>
+        </section>
+        <section id="qa" class="qa-section" style="display:none;">
+            <h2>Q&A</h2>
+            <input type="text" id="questionInput" placeholder="Ask a question">
+            <button id="askButton">Ask</button>
+            <div id="answer"></div>
+        </section>
+    </main>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
